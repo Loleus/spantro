@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./css/style.css" screen />
+  <title>Spantro v0.1</title>
+</head>
+
+<body>
+  <ol></ol>
+  <p class="zoom">Zoom</p>
+  <form action="" method="post" name="edit" oninput="result.value=parseInt(points.value);">
+    <input type="range" id="points" value="10" name="points" min="10" max="20" step="1" oninput="change(this.value)"
+      onchange="change(this.value)">
+      <p class="zoom">Span size</p>
+    <output name="result" for="points">10</output>
+  </form>
+  <p class="zoom">loleus@gmail.com</p>
+  <script>
+    let root = document.querySelector(':root');
+    let change = (value) => {
+      root.style.setProperty('--size', `${value}px`);
+    }
+  </script>
+  <script src="./main.js"></script>
+</body>
+
+</html>
